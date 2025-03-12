@@ -5,6 +5,7 @@ namespace FinalLabTask1.Entities;
 public class TransactionDbContext: DbContext
 {
     public DbSet<TransactionLogs> TransactionLogs { get; set; }
+    public DbSet<AccountTransactions> AccountTransactions { get; set; }
 
     public TransactionDbContext(DbContextOptions<TransactionDbContext> options): base(options)
     {
@@ -15,6 +16,7 @@ public class TransactionDbContext: DbContext
     {
         base.OnModelCreating(modelBuilder);
         modelBuilder.Entity<TransactionLogs>().HasKey(x => x.Id);
+        modelBuilder.Entity<AccountTransactions>().HasKey(x => x.Id);
         modelBuilder.HasDefaultSchema("public");
     }
 

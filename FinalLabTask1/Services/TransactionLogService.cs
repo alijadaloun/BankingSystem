@@ -1,6 +1,7 @@
 using System.Text;
 using RabbitMQ.Client;
 using FinalLabTask1.Entities;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 
 namespace FinalLabTask1.Services;
@@ -36,8 +37,6 @@ public class TransactionLogService: ITransactionLogsService
             var body = Encoding.UTF8.GetBytes(message);
             await channel.BasicPublishAsync(exchange: string.Empty, routingKey: "", body: body, basicProperties: new BasicProperties(), mandatory: true);
             //ready to be consumed by a consumer service
-            return transactionLogs;
-
         }
             
         
@@ -55,6 +54,35 @@ public class TransactionLogService: ITransactionLogsService
         if( accountId <0) throw new Exception("Invalid account Id ");
         var result = _context.TransactionLogs.Where(x => x.AccountId == accountId).ToList();
         return await Task.FromResult(result);
+    }
+
+    public async Task<IEnumerable<AccountTransactions>> GetCommonTransactions(List<int> accountIds)
+    {
+        var s = await _context.AccountTransactions.ToListAsync();
+        var transactionQuery = from x in s
+            where accountIds.Contains(x.AccountId)
+                select x;
+        return  transactionQuery.ToList();
+
+    }
+
+    public async Task<IEnumerable<AccountBalanceSummary>> GetAccountBalanceSummary(int userId)
+    {
+        var transactions = await _context.AccountTransactions
+            .Where(t => t.AccountId == userId)
+            .ToListAsync();
+        var summary = transactions
+            .GroupBy(t => t.AccountId)
+            .Select(g => new AccountBalanceSummary
+            {
+                AccountId = g.Key,
+                TotalDeposits = g.Where(t => t.TransactionType == TransactionType.Deposit).Sum(t => t.Amount),
+                TotalWithdrawals = g.Where(t => t.TransactionType == TransactionType.Withdrawal).Sum(t => t.Amount),
+                TotalBalance = g.Sum(t => t.TransactionType == TransactionType.Deposit ? t.Amount : -t.Amount)
+            })
+            .ToList();
+        return summary.AsEnumerable();
+        
     }
 
     public async Task<IEnumerable<TransactionLogs>> Get()

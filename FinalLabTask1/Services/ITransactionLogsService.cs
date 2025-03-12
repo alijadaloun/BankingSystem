@@ -8,7 +8,9 @@ public interface ITransactionLogsService
     //AccountId, TransactionType, Amount, Status, Details.
 
     public Task<List<TransactionLogs>> GetTransactionLogs(int accountId);
-    public Task<IEnumerable<TransactionLogs>> Get();
+    public Task<IEnumerable<AccountTransactions>> GetCommonTransactions(List<int> accountIds);
+    public Task<IEnumerable<AccountBalanceSummary>> GetAccountBalanceSummary(int userId);
+    
     
     
     

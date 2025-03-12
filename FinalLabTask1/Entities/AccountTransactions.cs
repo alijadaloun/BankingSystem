@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FinalLabTask1.Entities;
 
-public class TransactionLogs
+public class AccountTransactions
 {
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     [Key]
@@ -14,7 +14,13 @@ public class TransactionLogs
     public DateTime TimeStamp { get; set; }
     public Status Status { get; set; }
     public string Details { get; set; } ="";
-
     
+}
 
+public class AccountBalanceSummary
+{
+    public int AccountId { get; set; }
+    public double TotalDeposits { get; set; }
+    public double TotalWithdrawals { get; set; }
+    public double TotalBalance { get; set; }
 }
