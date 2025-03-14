@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alijadaloun\\Desktop\\BE Track\\FinalLabTask1\\finallabtask1\\FinalLabTask1.csproj": {}
+    "C:\\Users\\alijadaloun\\Desktop\\BE Track\\FinalLabTask1\\FinalLabTask1\\FinalLabTask1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alijadaloun\\Desktop\\BE Track\\FinalLabTask1\\finallabtask1\\FinalLabTask1.csproj": {
+    "C:\\Users\\alijadaloun\\Desktop\\BE Track\\FinalLabTask1\\FinalLabTask1\\FinalLabTask1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alijadaloun\\Desktop\\BE Track\\FinalLabTask1\\finallabtask1\\FinalLabTask1.csproj",
+        "projectUniqueName": "C:\\Users\\alijadaloun\\Desktop\\BE Track\\FinalLabTask1\\FinalLabTask1\\FinalLabTask1.csproj",
         "projectName": "FinalLabTask1",
-        "projectPath": "C:\\Users\\alijadaloun\\Desktop\\BE Track\\FinalLabTask1\\finallabtask1\\FinalLabTask1.csproj",
+        "projectPath": "C:\\Users\\alijadaloun\\Desktop\\BE Track\\FinalLabTask1\\FinalLabTask1\\FinalLabTask1.csproj",
         "packagesPath": "C:\\Users\\alijadaloun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alijadaloun\\Desktop\\BE Track\\FinalLabTask1\\finallabtask1\\obj\\",
+        "outputPath": "C:\\Users\\alijadaloun\\Desktop\\BE Track\\FinalLabTask1\\FinalLabTask1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -53,6 +53,10 @@
             "MassTransit.RabbitMQ": {
               "target": "Package",
               "version": "[8.3.8-develop.2231, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.4.1, )"
             },
             "Microsoft.AspNetCore.OData": {
               "target": "Package",

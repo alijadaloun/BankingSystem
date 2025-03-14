@@ -6,6 +6,7 @@ public class TransactionDbContext: DbContext
 {
     public DbSet<TransactionLogs> TransactionLogs { get; set; }
     public DbSet<AccountTransactions> AccountTransactions { get; set; }
+    public DbSet<TransactionEvent> TransactionEvent { get; set; } 
 
     public TransactionDbContext(DbContextOptions<TransactionDbContext> options): base(options)
     {
