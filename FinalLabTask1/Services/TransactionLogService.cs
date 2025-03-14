@@ -16,7 +16,7 @@ public class TransactionLogService: ITransactionLogsService
     }
     public async Task<TransactionLogs> PostTransactionLogs(int accountId, TransactionType transactionType, double amount, Status status,
         string details)
-    {
+    {//now this send the transaction to rabbitmq queue, then another client can retrieve it
         var transactionLogs = new TransactionLogs
         {
             AccountId = accountId,
@@ -28,10 +28,10 @@ public class TransactionLogService: ITransactionLogsService
 
 
         var factory = new ConnectionFactory{HostName = "localhost"};
-        using( var connection = await factory.CreateConnectionAsync())
-        using (var channel = await connection.CreateChannelAsync())
+        await using( var connection = await factory.CreateConnectionAsync())
+        await using (var channel = await connection.CreateChannelAsync())
         {
-            channel.QueueDeclareAsync(queue: "RabbitQueue", durable: true, exclusive: false, autoDelete: false,
+            await channel.QueueDeclareAsync(queue: "RabbitQueue", durable: true, exclusive: false, autoDelete: false,
                 arguments: null);
             var message = JsonConvert.SerializeObject(transactionLogs);
             var body = Encoding.UTF8.GetBytes(message);
@@ -53,6 +53,7 @@ public class TransactionLogService: ITransactionLogsService
     {
         if( accountId <0) throw new Exception("Invalid account Id ");
         var result = _context.TransactionLogs.Where(x => x.AccountId == accountId).ToList();
+        if(result.Count == 0) throw new Exception($"No account of id {accountId} found");
         return await Task.FromResult(result);
     }
 
@@ -85,9 +86,9 @@ public class TransactionLogService: ITransactionLogsService
         
     }
 
-    public async Task<IEnumerable<TransactionLogs>> Get()
+    public async Task<IEnumerable<AccountTransactions>> Get()
     {
-        var result =  _context.TransactionLogs.AsEnumerable();
+        var result =  _context.AccountTransactions.AsEnumerable();
         return await Task.FromResult(result);
         
 

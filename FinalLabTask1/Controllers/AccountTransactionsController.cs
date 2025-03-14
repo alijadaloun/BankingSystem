@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FinalLabTask1.Controllers;
 [ApiController]
-[Route("accounts")]
+[Route("api/accounts")]
 public class AccountTransactionsController
 {
     private readonly ITransactionLogsService _transactionLogsService;
@@ -21,7 +21,7 @@ public class AccountTransactionsController
         return await results;
     }
 
-    [HttpGet("balance-summary/{userId")]
+    [HttpGet("balance-summary/{userId}")]
     public async Task<IEnumerable<AccountBalanceSummary>> GetAccountBalanceSummary(int userId)
     {
         var results = _transactionLogsService.GetAccountBalanceSummary(userId);

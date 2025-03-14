@@ -32,7 +32,6 @@ public class TransactionLogsController: ControllerBase
         var result = await _transactionLogsService.GetTransactionLogs(accountid);
         return Ok(result);
     }
-    [Http]
     
     
 }

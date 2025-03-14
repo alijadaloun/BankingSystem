@@ -10,6 +10,7 @@ public interface ITransactionLogsService
     public Task<List<TransactionLogs>> GetTransactionLogs(int accountId);
     public Task<IEnumerable<AccountTransactions>> GetCommonTransactions(List<int> accountIds);
     public Task<IEnumerable<AccountBalanceSummary>> GetAccountBalanceSummary(int userId);
+    public Task<IEnumerable<AccountTransactions>> Get();
     
     
     
