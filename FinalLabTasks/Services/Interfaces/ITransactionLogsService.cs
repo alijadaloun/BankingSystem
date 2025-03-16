@@ -1,0 +1,18 @@
+using FinalLabTask1.Entities;
+
+namespace FinalLabTask1.Services.Interfaces;
+
+public interface ITransactionLogsService
+{
+    public  Task<TransactionLogs> PostTransactionLogs(int accountId, TransactionType transactionType, double amount,Status status, string details);
+    //AccountId, TransactionType, Amount, Status, Details.
+
+    public Task<List<TransactionLogs>> GetTransactionLogs(int accountId);
+    public Task<IEnumerable<AccountTransactions>> GetCommonTransactions(List<int> accountIds);
+    public Task<IEnumerable<AccountBalanceSummary>> GetAccountBalanceSummary(int userId);
+    public Task<IEnumerable<AccountTransactions>> Get();
+    
+    
+    
+    
+}
