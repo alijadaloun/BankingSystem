@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+    <resheader name="version"><value>2.0</value></resheader>
+    <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0</value></resheader>
+    <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0</value></resheader>
+    <data name="BalanceLabel" xml:space="preserve"><value>Saldo actual</value></data>
+    <data name="WelcomeMessage" xml:space="preserve"><value>Bienvenido a su cuenta</value></data>
+    <data name="TransferSuccess" xml:space="preserve"><value>Transferencia completada con éxito</value></data>
+    <data name="TransferFailed" xml:space="preserve"><value>Transferencia fallida</value></data>
+    <data name="Savings" xml:space="preserve">
+        <value>Cuenta de Ahorros</value>
+    </data>
+    <data name="Checking" xml:space="preserve">
+        <value>Cuenta Corriente</value>
+    </data>
+    <data name="TransactionNotification" xml:space="preserve">
+        <value>La transacción con ID {0} se ha procesado correctamente.</value>
+    </data>
+</root>

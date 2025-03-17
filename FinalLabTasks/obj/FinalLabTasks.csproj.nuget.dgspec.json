@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alijadaloun\\Desktop\\BE Track\\FinalLabTasks\\finallabtasks\\FinalLabTasks.csproj": {}
+    "C:\\Users\\alijadaloun\\Desktop\\BE Track\\FinalLabTasks\\FinalLabTasks\\FinalLabTasks.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alijadaloun\\Desktop\\BE Track\\FinalLabTasks\\finallabtasks\\FinalLabTasks.csproj": {
+    "C:\\Users\\alijadaloun\\Desktop\\BE Track\\FinalLabTasks\\FinalLabTasks\\FinalLabTasks.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alijadaloun\\Desktop\\BE Track\\FinalLabTasks\\finallabtasks\\FinalLabTasks.csproj",
+        "projectUniqueName": "C:\\Users\\alijadaloun\\Desktop\\BE Track\\FinalLabTasks\\FinalLabTasks\\FinalLabTasks.csproj",
         "projectName": "FinalLabTasks",
-        "projectPath": "C:\\Users\\alijadaloun\\Desktop\\BE Track\\FinalLabTasks\\finallabtasks\\FinalLabTasks.csproj",
+        "projectPath": "C:\\Users\\alijadaloun\\Desktop\\BE Track\\FinalLabTasks\\FinalLabTasks\\FinalLabTasks.csproj",
         "packagesPath": "C:\\Users\\alijadaloun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alijadaloun\\Desktop\\BE Track\\FinalLabTasks\\finallabtasks\\obj\\",
+        "outputPath": "C:\\Users\\alijadaloun\\Desktop\\BE Track\\FinalLabTasks\\FinalLabTasks\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -11,6 +11,7 @@ public class Account
     public int AccountId { get; set; }
     public string Name { get; set; }
     public decimal AccountBalance { get; set; }
+    public string AccountType { get; set; }
     public int TransactionId { get; set; } = 0;
     public Transaction Transaction { get; set; }
 

@@ -23,6 +23,20 @@
         },
         "runtime": {
           "FinalLabTasks.dll": {}
+        },
+        "resources": {
+          "ar/FinalLabTasks.resources.dll": {
+            "locale": "ar"
+          },
+          "en/FinalLabTasks.resources.dll": {
+            "locale": "en"
+          },
+          "es/FinalLabTasks.resources.dll": {
+            "locale": "es"
+          },
+          "fr/FinalLabTasks.resources.dll": {
+            "locale": "fr"
+          }
         }
       },
       "Humanizer.Core/2.14.1": {

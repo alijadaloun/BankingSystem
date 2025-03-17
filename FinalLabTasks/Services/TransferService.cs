@@ -1,14 +1,17 @@
 using FinalLabTask1.Entities;
 using FinalLabTask1.Services.Interfaces;
+using Microsoft.Extensions.Localization;
 
 namespace FinalLabTask1.Services;
 
 public class TransferService: ITransferService
 {
     private readonly TransactionDbContext _context;
-    public TransferService(TransactionDbContext context)
+    private readonly IStringLocalizer<TransferService> _localizer;
+    public TransferService(TransactionDbContext context, IStringLocalizer<TransferService> localizer)
     {
         _context = context;
+        _localizer = localizer;
     }
 
     public async Task<bool> Transfer(Account fromAccount, Account toAccount, decimal amount)
@@ -33,4 +36,16 @@ public class TransferService: ITransferService
         return true;
         
     }
+    
+    public async Task<string> NotifyTransactionAsync(int transactionId)
+    {
+        var transaction = await _context.Transactions.FindAsync(transactionId);
+        if (transaction == null)
+        {
+            return "No transaction found";
+        }
+        var message = string.Format(_localizer["TransactionNotification"], transactionId);
+        return message;
+    }
+
 }

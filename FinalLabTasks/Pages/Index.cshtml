@@ -1,0 +1,23 @@
+@page
+@model FinalLabTask1.Pages.Index
+
+
+<head>
+    <title>Transfer</title>
+</head>
+<form method="post">
+    <label>From Account ID:</label>
+    <input type="text" name="FromAccountId" />
+    <br />
+    <label>To Account ID:</label>
+    <input type="text" name="ToAccountId" />
+    <br />
+    <label>Amount:</label>
+    <input type="number" step="1" name="Amountt" />
+    <br />
+    <button type="submit">Transfer</button>
+</form>
+@if (!string.IsNullOrEmpty(Model.ResultMessage))
+{
+    <p><strong>@Model.ResultMessage</strong></p>
+}
